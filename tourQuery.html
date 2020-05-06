@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>City Break Assignment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h2>Tour Information Page</h2>
+    </header>
+
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="history.html">History and Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="attractions.html">Attractions and Venues</a>
+        <a href="events.html">Events</a>
+        <a href="tourQuery.html"> Tour Queries</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <!--FORM-->
+    <div class="container">
+        <form action="tourQuery.php" method="POST" name="tourQ">
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Email for reply</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="Your Email .." autofocus>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="tourType">What type of tour are you looking for? </label>
+                </div>
+                <div class="col-75">
+                    <label class="radio-inline">
+                        <input type="checkbox" name="optradio" id = "1" checked value="Walking">Walking
+                      </label>
+                    <label class="radio-inline">
+                        <input type="checkbox" name="optradio" id = "2" value="Boat">Boat
+                      </label>
+                    <label class="radio-inline">
+                        <input type="checkbox" name="optradio" id = "3" value="Guided">Guided
+                      </label>
+                    <label class="radio-inline">
+                        <input type="checkbox" name="optradio" id = "4" value="History">History
+                      </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="groupNum">How many people are going to be going on the tour? </label>
+                </div>
+                <div class="col-75">
+                    Number of people (between 1 and 10)
+                    <input type="number" name="number" min="1" max="10" style="width: 50px;" placeholder="1-10" autofocus required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25 price">
+                    <label for="groupNum">How much is each person willing to spend?</label>
+                </div>
+                <div class="col-75">
+                    <div class="slidercontainer">
+                        <input type="range" min="10" max="50" value="30" class="slider" id="price" class="price" name="price">
+                        <p>&euro;<span id="demo"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+                <input type="submit" value="Submit" onclick="ValidateEmail()">
+            </div>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
+
+<script src="js/project.js"></script>
+<script>
+    var slider = document.getElementById("price");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>City Break Assignment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <html manifest="manifest.txt">
+</head>
+
+<body>
+    <header>
+        <h2> Contact Us</h2>
+    </header>
+
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="history.html">History and Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="attractions.html">Attractions and Venues</a>
+        <a href="events.html">Events</a>
+        <a href="tourQuery.html">Tour Queries</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <!--FORM-->
+    <div class="container">
+        <form action="contact_form_feedback.php" name="contact" method="POST">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.." autofocus required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="Your Email ..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Phone Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="tel" id="phone" name="phone" placeholder="Your mobile number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="queuryType">Query Type</label>
+                </div>
+                <div class="col-75">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" id = "1" value = "accom" checked>Acccommodation
+                      </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" id = "2" value="dining">Dining
+                      </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" id = "3" value="activities">Activities
+                      </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" id = "4" value="other">Other
+                      </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="query">Query</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="What is your query?.." rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+                <input type="submit" value="Submit" onclick="ValidateEmail(document.contact.email)">
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Try get canvas in here</p>
+    </div>
+
+</body>
+
+</html>
+
+<script src="js/project.js"></script>
